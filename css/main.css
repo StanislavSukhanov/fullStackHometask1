@@ -217,14 +217,30 @@ header:after {
   z-index: 10; }
 
 /* colors a border of an input field if user has not given any data*/
+
 .no-value {
-  border: 1px solid red !important;
+  border: 1px solid  rgba(241, 46, 46, 0.801) !important;
   border-radius: 2px;
 }
 
+/* style of error message */
+.no-value:first-child{
+  border: none !important;
+  color: rgba(241, 46, 46, 0.801) !important;
+  background-color: transparent !important;
+}
 
+
+
+
+
+
+/*
+
+BEFORE AND AFTER DOESNT WORK WITH INPUTS
 .no-value::before {
   display: block;
   content: "this value can't be blank";
 }
+*/
 /*# sourceMappingURL=../maps/main.css.map */

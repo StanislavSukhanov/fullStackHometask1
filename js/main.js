@@ -21,8 +21,20 @@ window.addEventListener('load', function() {
       console.log(burgerData, burgerData.elements);
       document.getElementByClassName("burger").classList.remove("burger-show"); // stopped here
     } else {
-      alert("bad");
+      // change border-color of input field to red and adding new Span element with error errorMessage 
+      
+      // if form containg "no-value class, we simply return"
+      if (burgerData.elements[0].classList.contains("no-value")){
+        return; 
+      }
+      // main logic 
       burgerData.elements[0].classList.add("no-value");
+      var errorMessage = document.createElement("span");
+      errorMessage.innerHTML = "Oops! this value can't be blank :(";
+      errorMessage.classList.add("no-value");
+      // appendChild adds the end of a node list  / prepend adds node to top 
+      burgerData.prepend(errorMessage); 
+      
     }
   }
 
