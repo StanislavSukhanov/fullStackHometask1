@@ -15,16 +15,18 @@ window.addEventListener('load', function() {
   //------ Секция логики ---------------------------
 
   function checkFormValue(){
+    // get element
     var burgerData = document.getElementById("burger-form-value");
+    
+    // check if input field contain any data
     if (burgerData.elements[0].value.length != 0){
-      alert("good");
-      console.log(burgerData, burgerData.elements);
-      var elementToRemove = document.getElementByClassName("burger");
-      //.classList.remove("burger-show"); // stopped here
-      console.log(elementToRemove);
+
+      // contain => we get a burger element, and remove CSS class 
+      var elementToRemove = document.getElementsByClassName("burger");
+      elementToRemove[0].classList.remove("burger-show");
+
     } else {
       // change border-color of input field to red and adding new Span element with error errorMessage 
-      
       // if form containg "no-value class, we simply return"
       if (burgerData.elements[0].classList.contains("no-value")){
         return; 
