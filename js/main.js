@@ -19,7 +19,9 @@ window.addEventListener('load', function() {
     if (burgerData.elements[0].value.length != 0){
       alert("good");
       console.log(burgerData, burgerData.elements);
-      document.getElementByClassName("burger").classList.remove("burger-show"); // stopped here
+      var elementToRemove = document.getElementByClassName("burger");
+      //.classList.remove("burger-show"); // stopped here
+      console.log(elementToRemove);
     } else {
       // change border-color of input field to red and adding new Span element with error errorMessage 
       
@@ -34,7 +36,6 @@ window.addEventListener('load', function() {
       errorMessage.classList.add("no-value");
       // appendChild adds the end of a node list  / prepend adds node to top 
       burgerData.prepend(errorMessage); 
-      
     }
   }
 
