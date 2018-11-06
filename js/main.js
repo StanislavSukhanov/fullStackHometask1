@@ -5,6 +5,8 @@ window.addEventListener('load', function() {
   var burger = document.querySelector(".burger");
   var clos = document.querySelector(".form-close");
   var bur = document.getElementById('br');
+  var successMessageShow = document.querySelector(".burger-success");
+  var closeSuccessMessage = document.querySelector(".close-success");
 
   // geting a value from the burger form
 
@@ -17,13 +19,15 @@ window.addEventListener('load', function() {
   function checkFormValue(){
     // get element
     var burgerData = document.getElementById("burger-form-value");
-    
+
     // check if input field contain any data
     if (burgerData.elements[0].value.length != 0){
 
       // contain => we get a burger element, and remove CSS class 
       var elementToRemove = document.getElementsByClassName("burger");
       elementToRemove[0].classList.remove("burger-show");
+
+      successMessageShow.classList.add('burger-show');
 
     } else {
       // change border-color of input field to red and adding new Span element with error errorMessage 
@@ -50,7 +54,13 @@ window.addEventListener('load', function() {
   function closeForm() {
 
     burger.classList.remove('burger-show');
+    
 
+  }
+
+  function closeSuccess(){
+    successMessageShow.classList.remove("burger-show");
+    console.log('action');
   }
 
 
@@ -77,6 +87,8 @@ window.addEventListener('load', function() {
   clos.addEventListener('click', closeForm);
 
   submitButton.addEventListener('click', checkFormValue);
+
+  closeSuccessMessage.addEventListener('click', closeSuccess);
 
 
 });
